@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jagamine</title>
+</head>
+<body>
+    <form method="GET" action="">
+        <input type="text" name="arv1" placeholder="Esimene arv">
+        <input type="text" name="arv2" placeholder="Teine arv">
+        <input type="submit" value="Jaga">
+    </form>
+    <?php
+    if (!empty($_GET['arv1']) && !empty($_GET['arv2'])) {
+        $arv1 = $_GET['arv1'];
+        $arv2 = $_GET['arv2'];
+        
+        if ($arv2 == 0) {
+            echo "Hoiatus: Nulliga jagamine ei ole lubatud!";
+        } else {
+            $tulemus = $arv1 / $arv2;
+            echo "Tulemus: $tulemus";
+        }
+    }
+    ?>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vanus</title>
+</head>
+<body>
+    <form method="GET" action="">
+        <input type="text" name="vanus1" placeholder="Esimene vanus">
+        <input type="text" name="vanus2" placeholder="Teine vanus">
+        <input type="submit" value="Leia vanem">
+    </form>
+    <?php
+    if (!empty($_GET['vanus1']) && !empty($_GET['vanus2'])) {
+        $vanus1 = $_GET['vanus1'];
+        $vanus2 = $_GET['vanus2'];
+        
+        if ($vanus1 > $vanus2) {
+            echo "Esimene vanus ($vanus1) on vanem.";
+        } elseif ($vanus2 > $vanus1) {
+            echo "Teine vanus ($vanus2) on vanem.";
+        } else {
+            echo "Mõlemad on ühevanused.";
+        }
+    }
+    ?>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ristkülik või ruut</title>
+</head>
+<body>
+    <form method="GET" action="">
+        <input type="text" name="kylg1" placeholder="Esimene külg">
+        <input type="text" name="kylg2" placeholder="Teine külg">
+        <input type="submit" value="Määratle kujund">
+    </form>
+    <?php
+    if (!empty($_GET['kylg1']) && !empty($_GET['kylg2'])) {
+        $kylg1 = $_GET['kylg1'];
+        $kylg2 = $_GET['kylg2'];
+        
+        if ($kylg1 == $kylg2) {
+            echo "See on ruut.";
+        } else {
+            echo "See on ristkülik.";
+        }
+    }
+    ?>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ristkülik või ruut II</title>
+</head>
+<body>
+    <form method="GET" action="">
+        <input type="text" name="kylg1" placeholder="Esimene külg">
+        <input type="text" name="kylg2" placeholder="Teine külg">
+        <input type="submit" value="Määratle kujund">
+    </form>
+    <?php
+    if (!empty($_GET['kylg1']) && !empty($_GET['kylg2'])) {
+        $kylg1 = $_GET['kylg1'];
+        $kylg2 = $_GET['kylg2'];
+        
+        if ($kylg1 == $kylg2) {
+            echo "See on ruut.";
+        } else {
+            echo "See on ristkülik.";
+        }
+    }
+    ?>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juubel</title>
+</head>
+<body>
+    <form method="GET" action="">
+        <input type="text" name="sunniaasta" placeholder="Sünniaasta">
+        <input type="submit" value="Kontrolli juubelit">
+    </form>
+    <?php
+    if (!empty($_GET['sunniaasta'])) {
+        $sunniaasta = $_GET['sunniaasta'];
+        
+        if ((date('Y') - $sunniaasta) % 5 == 0) {
+            echo "See aasta on juubeliaasta!";
+        } else {
+            echo "See aasta ei ole juubeliaasta.";
+        }
+    }
+    ?>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hinne</title>
+</head>
+<body>
+    <form method="GET" action="">
+        <input type="text" name="punktid" placeholder="Sisesta punktid">
+        <input type="submit" value="Kontrolli hinnet">
+    </form>
+    <?php
+    if (!empty($_GET['punktid'])) {
+        $punktid = $_GET['punktid'];
+        
+        if ($punktid > 10) {
+            echo "SUPER!";
+        } elseif ($punktid >= 5) {
+            echo "TEHTUD!";
+        } elseif ($punktid >= 0) {
+            echo "KASIN!";
+        } else {
+            echo "SISESTA OMA PUNKTID!";
+        }
+    }
+    ?>
+</body>
+</html>
