@@ -1,0 +1,16 @@
+<?php
+// Avage fail "andmefail.txt" lugemiseks fopen abil.
+$file = fopen("andmefail.txt", "r");
+
+// Kasutage fread, et lugeda faili sisu muutujasse.
+$content = fread($file, filesize("andmefail.txt"));
+
+// Parandage tekst, et asendada reavahetused <br>-märgenditega, kasutades nl2br.
+$content = nl2br($content);
+
+// Väljastage loetud ja töödeldud tekst ekraanile.
+echo $content;
+
+// Sulgege fail fclose abil.
+fclose($file);
+?>
